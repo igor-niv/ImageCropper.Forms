@@ -6,6 +6,8 @@ using Xamarin.Forms;
 
 namespace Stormlion.ImageCropper
 {
+    public enum OutputImageFormatType { PNG, JPG }
+
     public class ImageCropper
     {
         public static ImageCropper Current { get; set; }
@@ -20,6 +22,8 @@ namespace Stormlion.ImageCropper
             Rectangle,
             Oval
         };
+
+        public OutputImageFormatType OutputImageFormat { get; set; } = OutputImageFormatType.JPG;
 
         public CropShapeType CropShape { get; set; } = CropShapeType.Rectangle;
 
@@ -89,7 +93,7 @@ namespace Stormlion.ImageCropper
 
             // small delay
             await Task.Delay(TimeSpan.FromMilliseconds(100));
-            DependencyService.Get<IImageCropperWrapper>().ShowFromFile(this, imageFile);
+            DependencyService.Get<IImageCropperWrapper>().ShowFromFile(this, imageFile, OutputImageFormat);
         }
     }
 }

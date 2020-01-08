@@ -9,7 +9,7 @@ namespace Stormlion.ImageCropper.Droid
 {
     public class ImageCropperImplementation : IImageCropperWrapper
     {
-        public void ShowFromFile(ImageCropper imageCropper, string imageFile)
+        public void ShowFromFile(ImageCropper imageCropper, string imageFile, OutputImageFormatType outputImageFormat)
         {
             try
             {
