@@ -27,13 +27,13 @@ namespace Stormlion.ImageCropper.iOS
                 cropViewController = new TOCropViewController(image);
             }
 
-            if(imageCropper.AspectRatioX > 0 && imageCropper.AspectRatioY > 0)
+            /*if(imageCropper.AspectRatioX > 0 && imageCropper.AspectRatioY > 0)
             {
                 cropViewController.AspectRatioPreset = TOCropViewControllerAspectRatioPreset.Custom;
                 cropViewController.ResetAspectRatioEnabled = false;
                 cropViewController.AspectRatioLockEnabled = true;
                 cropViewController.CustomAspectRatio = new CGSize(imageCropper.AspectRatioX, imageCropper.AspectRatioY);
-            }
+            }*/
 
             cropViewController.OnDidCropToRect = (outImage, cropRect, angle) =>
             {
